@@ -92,7 +92,7 @@
                     
                     <!-- active : 해당 페이지의 대메뉴에 추가 -->
                     <ul class="n-menu-list">
-                        <li data-menu="admin-system">시스템관리</li>
+                        <li class="active" data-menu="admin-system">시스템관리</li>
                         <li data-menu="admin-data">데이터관리</li>
                         <li data-menu="admin-safenumber">안심번호관리</li>
                         <li data-menu="admin-business">업체관리</li>
@@ -205,135 +205,122 @@
             
 			<!-- content -->
             <div class="c-wrap">
-                <!-- c-main : 메인페이지 -->
-                <section class="c-main center-ct">
-                    <!-- 메인 공지사항 -->
-                    <article class="main-notice-area">
-                        <div class="main-notice-top">
-                            <div class="tit">공지사항</div>
-                            <button type="button" class="main-notice-btn" onclick="location.href='board-notice-list.html';">
-                                <span>더보기</span>
-                            </button>
+                <!-- c-page : 기본페이지 -->
+                <section class="c-page center-ct">
+                    <!-- aside -->
+                    <aside class="aside">
+                        <h1 class="not-view">aside</h1>
+                        
+                        <div class="a-menu-tit">시스템관리</div>
+                        
+                        <!-- active : 해당 페이지의 메뉴에 추가 -->
+                        <ul class="a-menu-list">
+                            <li>
+                                <a href="system-admin-list.html">관리자 계정관리</a>
+                            </li>
+                            <li>
+                                <a href="system-user-list.html">사용자 계정관리</a>
+                            </li>
+                            <li>
+                                <a href="system-admin-log.html">관리자 로그관리</a>
+                            </li>
+                            <li>
+                                <a href="system-user-log.html">사용자 로그관리</a>
+                            </li>
+                            <li>
+                                <a href="system-auth-list.html">권한관리</a>
+                            </li>
+                            <li>
+                                <a href="system-code-list.html">코드관리</a>
+                            </li>
+                            <li class="active">
+                                <a href="system-template-list.html">QR코드 템플릿관리</a>
+                            </li>
+                            <li>
+                                <a href="system-agreement-list.html">약관관리</a>
+                            </li>
+                            <li>
+                                <a href="system-ip-list.html">IP관리</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    
+                    <!-- 페이지 내용 -->
+                    <article class="page-area">
+                        <div class="page-top-area">
+                            <div class="tit">QR코드 템플릿 등록</div>
+                            <div class="cate">시스템관리 > QR코드 템플릿관리</div>
                         </div>
                         
-                        <ul class="main-notice-list">
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
+                        <div class="page-write-area">
+                            <form id="" name="" method="" action="">                        
+                                <div class="detail-table-area">
+                                    <table class="detail-table">
+                                        <colgroup>
+                                            <col width="130">
+                                            <col width="*">
+                                            <col width="130">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>템플릿명</th>
+                                                <td colspan="3">
+                                                    <input type="text" id="" name="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>템플릿방향</th>
+                                                <td>
+                                                    <select id="" name="">
+                                                        <option value="세로">세로</option>
+                                                        <option value="가로">가로</option>
+                                                    </select>
+                                                </td>
+                                                <th>노출상태</th>
+                                                <td>
+                                                    <select id="" name="">
+                                                        <option value="노출">노출</option>
+                                                        <option value="노출안함">노출안함</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <!--<tr>
+                                                <th>템플릿파일</th>
+                                                <td colspan="3">
+                                                    <div class="c-file-input">
+                                                        <input type="text" id="" name="" class="c-file-txt" disabled>
+                                                        <label>
+                                                            <input type="file" id="" name="">파일선택
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>-->
+                                            
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                            <li>
-                                <div class="tit">
-                                    <a href="board-notice-detail.html">[긴급] 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다. 공지사항입니다.</a>
-                                </div>
-                                <div class="date">2023-01-18</div>
-                            </li>
-                        </ul>
-                    </article>
-                    
-                    <!-- 메인 메뉴 -->
-                    <article class="main-menu-area">
-                        <ul class="main-menu-list">
-                            <li data-menu="admin-system">
-                                <div class="main-menu-tit">시스템관리</div>
                                 
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="system-admin-list.html">관리자 계정관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-user-list.html">사용자 계정관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-admin-log.html">관리자 로그관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-user-log.html">사용자 로그관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-auth-list.html">권한관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-code-list.html">코드관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-template-list.html">QR코드 템플릿관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-agreement-list.html">약관관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="system-ip-list.html">IP관리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu="admin-data">
-                                <div class="main-menu-tit">데이터관리</div>
+                                <!-- tui-image-editor-area : QR코드 편집툴 -->
+                                <div class="tui-image-editor-area">
+                                    <div id="tui-image-editor"></div>
+                                </div>
                                 
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="data-place-list.html">공유장소관리</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu="admin-safenumber">
-                                <div class="main-menu-tit">
-                                    <a href="safenumber-list.html">안심번호관리</a>
+                                <div class="detail-bottom-area">
+                                    <div class="c-notice-txt">작업하던 중에 템플릿을 변경하면 이전에 작업한 내역들은 모두 <span class="c-bold">초기화</span>됩니다.</div>
+                                    <div class="c-notice-txt">템플릿 배경 사진 업로드시 사진 규격은 <span class="c-bold">세로일 경우 204px X 324px 이상, 가로일 경우 324px X 204px 이상</span>으로 선택해주시기 바랍니다.</div>
                                 </div>
-                            </li>
-                            <li data-menu="admin-business">
-                                <div class="main-menu-tit">
-                                    <a href="business-list.html">업체관리</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-stats">
-                                <div class="main-menu-tit">
-                                    <a href="stats-list.html">통계관리</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-map">
-                                <div class="main-menu-tit">
-                                    <a href="map.html">위치정보 및 지도</a>
-                                </div>
-                            </li>
-                            <li data-menu="admin-board">
-                                <div class="main-menu-tit">게시판관리</div>
                                 
-                                <ul class="main-sub-menu-list">
-                                    <li>
-                                        <a href="board-notice-list.html">공지사항</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-qna-list.html">QNA</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-reference-list.html">자료실</a>
-                                    </li>
-                                    <li>
-                                        <a href="board-faq-list.html">FAQ</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                                <div class="detail-btn-area">
+                                    <button type="button" class="default-btn04" onclick="location.href='system-template-list.html';">
+                                        <span>목 록</span>
+                                    </button>
+                                    <button type="button" class="default-btn05 register-btn" onclick="location.href='system-template-list.html';">
+                                        <span>등 록</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </article>
                 </section>
             </div>
@@ -483,6 +470,96 @@
                             <button type="button" class="default-btn01" onclick="">
                                 <span>수 정</span>
                             </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-mask"></div>
+                
+                <!-- QR코드 만드는 방법창 -->
+                <div class="l-area" id="qrcode-help-layer">
+                    <div class="l-box">
+                        <div class="l-tit-area">
+                            <div class="l-tit">QR코드 만드는 방법</div>
+                            <button type="button" class="l-tit-btn" onclick="closeLayer(this);">
+                                <span><img src="../img/close-icon.png" alt="레이어닫기"></span>
+                            </button>
+                        </div>
+                        <div class="l-con-area">
+                            <div class="qrcode-help-area">
+                                <ul class="qrcode-help-list swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <img src="../img/pc-qrcode-img.png" alt="그리기" class="qrcode-help-img">
+                                        <div class="qrcode-help-tit">선을 자유롭게 그릴 수 있고 방법은 아래와 같습니다.</div>
+                                        <div class="qrcode-help-explain">
+                                            <div class="explain-item explain-ff6384">1. 선 색상을 선택합니다.</div>
+                                            <div class="explain-item explain-ffa041">2. 바를 움직이거나 입력창에 입력을 해서 선 두께를 설정합니다.</div>
+                                            <div class="explain-item explain-ffc12c">3. 선 스타일을 선택합니다.</div>
+                                            <div class="explain-item explain-56c4c4">4. 템플릿 위에 선을 자유롭게 그립니다.</div>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="../img/pc-qrcode-img2.png" alt="도형" class="qrcode-help-img">
+                                        <div class="qrcode-help-tit">도형을 추가할 수 있고 방법은 아래와 같습니다.</div>
+                                        <div class="qrcode-help-explain">
+                                            <div class="explain-item explain-ff6384">1. 도형의 안쪽 색상과 선 색상을 선택합니다.</div>
+                                            <div class="explain-item explain-ffa041">2. 바를 움직이거나 입력창에 입력을 해서 도형의 선 두께를 설정합니다.</div>
+                                            <div class="explain-item explain-ffc12c">3. 도형 모양을 선택합니다.</div>
+                                            <div class="explain-item explain-56c4c4">4. 템플릿 위에 드래그해서 도형을 추가합니다.</div>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="../img/pc-qrcode-img3.png" alt="아이콘" class="qrcode-help-img">
+                                        <div class="qrcode-help-tit">아이콘을 추가할 수 있고 방법은 아래와 같습니다.</div>
+                                        <div class="qrcode-help-explain">
+                                            <div class="explain-item explain-ff6384">1. 아이콘 색상을 선택합니다.</div>
+                                            <div class="explain-item explain-ffa041">2. 아이콘 모양을 선택합니다.</div>
+                                            <div class="explain-item explain-ffc12c">3. 템플릿 위에 드래그해서 아이콘을 추가합니다.</div>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="../img/pc-qrcode-img4.png" alt="텍스트" class="qrcode-help-img">
+                                        <div class="qrcode-help-tit">텍스트를 추가할 수 있고 방법은 아래와 같습니다.</div>
+                                        <div class="qrcode-help-explain">
+                                            <div class="explain-item explain-ff6384">1. 텍스트 굵기, 기울기, 밑줄여부를 선택합니다.</div>
+                                            <div class="explain-item explain-ffa041">2. 텍스트 색상을 선택합니다.</div>
+                                            <div class="explain-item explain-ffc12c">3. 바를 움직이거나 입력창에 입력을 해서 텍스트 크기를 설정합니다.</div>
+                                            <div class="explain-item explain-56c4c4">4. 텍스트 스타일을 선택합니다.</div>
+                                            <div class="explain-item explain-39a3eb">5. 템플릿 위에 클릭해서 텍스트를 추가한 후에 텍스트 내용을 수정합니다.</div>
+                                            <div class="explain-item explain-9966ff">6. 텍스트를 선택한 후에 정렬을 선택합니다.</div>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="../img/pc-qrcode-img5.png" alt="템플릿" class="qrcode-help-img">
+                                        <div class="qrcode-help-tit">템플릿을 변경할 수 있고 방법은 아래와 같습니다.</div>
+                                        <div class="qrcode-help-explain">
+                                            <div class="explain-item explain-ff6384">1. 템플릿 방향을 선택합니다.</div>
+                                            <div class="explain-item explain-ffa041">2. 변경할 템플릿을 선택합니다.<br>단, 작업하던 중에 템플릿을 변경하면 이전에 작업한 내역들은 모두 초기화되니 이 점은 유의해주시기 바랍니다.</div>
+                                            <div class="explain-item explain-ffc12c">3. 기존의 템플릿 외에 다른 템플릿을 적용하고 싶을 경우 선택합니다.<br>해당 항목을 누르면 사진 선택창이 노출되고 사진을 선택하면 템플릿 배경으로 적용됩니다.<br>단, 사진 규격은 세로일 경우 204px X 324px 이상, 가로일 경우 324px X 204px 이상으로 선택해주시기 바랍니다.</div>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="../img/pc-qrcode-img7.png" alt="사진" class="qrcode-help-img">
+                                        <div class="qrcode-help-tit">사진을 추가할 수 있고 방법은 아래와 같습니다.</div>
+                                        <div class="qrcode-help-explain">
+                                            <div class="explain-item explain-ff6384">1. 사진 선택창이 노출됩니다.</div>
+                                            <div class="explain-item explain-ffa041">2. 사진 선택창에서 추가할 사진을 선택하면 템플릿 위에 사진이 추가됩니다.</div>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="../img/pc-qrcode-img8.png" alt="삭제" class="qrcode-help-img">
+                                        <div class="qrcode-help-tit">선택한 항목을 삭제할 수 있고 방법은 아래와 같습니다.</div>
+                                        <div class="qrcode-help-explain">
+                                            <div class="explain-item explain-ff6384">1. 삭제할 항목을 선택합니다.<br>참고로 항목을 선택했을 때 보이는 점들 중에서 아래 점 9개는 항목의 크기를 변경할 수 있고 위에 점 1개는 항목을 회전시킬 수 있습니다.</div>
+                                            <div class="explain-item explain-ffa041">2. 삭제를 누르면 항목이 삭제됩니다.</div>
+                                            <div class="explain-item explain-ffc12c">3. QR코드와 안심번호는 반드시 필요한 항목이므로 삭제하실 수 없습니다.</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="qrcode-help-arrow-area">
+                                    <div class="qrcode-help-prev-arrow"></div>
+                                    <div class="qrcode-help-next-arrow"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
