@@ -71,116 +71,96 @@
 		    <header class="header">
                 <h1 class="not-view">header</h1>
                 
-                <div class="h-center-area">
-                    <div class="h-tit">서비스 소개</div>
+                <div class="h-left-area">
+                    <button type="button" class="h-back-btn" onclick="location.href='login.html';">
+                        <span>뒤로</span>
+                    </button>
                 </div>
                 
-                <!-- 회원일 경우에만 노출 -->
-                <div class="h-right-area">
-                    <button type="button" class="h-menu-btn" onclick="openMobileMenu(this);">
-                        <span>메뉴</span>
-                    </button>
+                <div class="h-center-area">
+                    <div class="h-tit">회원가입</div>
                 </div>
             </header>
             
-            <!-- mobile -->
-            <div class="m-wrap">
-                <div class="m-box">
-                    <div class="m-top-area">
-                        <div class="m-top-user-txt"><span class="c-bold">사용자</span> 님</div>
-                        <button type="button" class="m-top-logout-btn" onclick="location.href='login.html';">
-                            <span>로그아웃</span>
-                        </button>
-                    </div>
-                    <ul class="m-menu-list">
-                        <li>
-                            <div class="m-menu-tit">기본정보</div>
-                            <ul class="m-sub-menu-list">
-                                <li>
-                                    <a href="basic-qrcode-list.html">QR코드 정보</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="m-menu-tit">마이페이지</div>
-                            <ul class="m-sub-menu-list">
-                                <li>
-                                    <a href="mypage-car-list.html">차량정보</a>
-                                </li>
-                                <li>
-                                    <a href="mypage-member-update.html">회원정보</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="m-menu-tit">게시판</div>
-                            <ul class="m-sub-menu-list">
-                                <li>
-                                    <a href="board-notice-list.html">공지사항</a>
-                                </li>
-                                <li>
-                                    <a href="board-qna-list.html">Q&amp;A</a>
-                                </li>
-                                <li>
-                                    <a href="board-reference-list.html">자료실</a>
-                                </li>
-                                <li>
-                                    <a href="board-faq-list.html">FAQ</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <button type="button" class="m-menu-close-btn" onclick="closeMobileMenu(this);">
-                        <span><img src="../img/close-icon2.png" alt="메뉴창닫기"></span>
-                    </button>
-                </div>
-                <div class="m-mask"></div>
-            </div>
-            
 			<!-- content -->
             <div class="c-wrap">
-                <!-- c-page : 기본페이지 -->
-                <section class="c-page">
-                    <!-- 페이지 내용 -->
-                    <article class="page-area">
-                        <ul class="main-introduce-list">
-                            <li>
-                                <div class="tit">제주 주차 안심 소개</div>
-                                <div class="sub-tit">주차안심이란?</div>
-                                <div class="con">
-                                    <div class="con-item">차량 내 개인 휴대전화번호 대신 QR코드와 ARS 대표번호로 운전자와 호출자를 직접 연결하는 서비스입니다.</div>
-                                    <div class="con-item">본 서비스를 통해 QR코드로는 문자전송 방식으로 연락할수 있으며, ARS 대표번호는 발신자전화번호 대신 제주주차안심 대표번호가 표시되어 안전하게 서비스를 이용하실 수 있습니다.</div>
-                                </div>
+                <!-- c-join : 회원가입페이지 -->
+                <section class="c-join">
+                    <!-- 회원가입 단계 -->
+                    <article class="join-step-area">
+                        <div class="join-step-tit">약관동의</div>
+                        <ul class="join-step-list">
+                            <li class="on">
+                                <div class="num">1</div>
                             </li>
                             <li>
-                                <div class="tit">주차안심번호 등록방법 (<span>운전자</span>)</div>
-                                <div class="con">
-                                    <div class="con-item">1. 본 서비스에 로그인 후 차량정보 및 QR코드정보 등록</div>
-                                    <div class="con-item">2. QR코드정보에서 등록된 QR코드를 프린트한 후 차량에 부착</div>
-                                </div>
+                                <div class="num">2</div>
                             </li>
                             <li>
-                                <div class="tit">주차안심번호 이용방법 (<span>이용자</span>)</div>
-                                <div class="sub-tit">QR코드 이용방법</div>
-                                <div class="con">문구입력 후 문자발송 -> 문자 또는 알림톡 발송 (위치정보 포함)</div>
-                                <div class="sub-tit">ARS 이용방법</div>
-                                <div class="con">ARS 대표번호 (1533-0355) 연결 -> 안심번호 (6자리 +‘#’) 입력 -> 차주 통화</div>
-                            </li>
-                            <li>
-                                <div class="tit">렌터카 이용방법 (<span>이용자</span>)</div>
-                                <div class="con">
-                                    <div class="con-item">1. 휴대전화로 렌터카에 부착된 QR코드 인식</div>
-                                    <div class="con-item">2. 렌터카 이용자의 휴대전화번호와 렌트기간을 설정한 후 차량 이용</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tit">소개 영상</div>
-                                <div class="con con-video">
-                                    <!--<img src="../img/member-mobile-video-img.png" alt="동영상이미지">-->                                
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vnCZMACBTz0?autoplay=1&mute=1&controls=1&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&playsinline=1&rel=0&playlist=vnCZMACBTz0" title="『제주주차안심번호』 홍보영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                </div>
+                                <div class="num">3</div>
                             </li>
                         </ul>
+                    </article>
+                    
+                    <!-- 회원가입 폼 -->
+                    <article class="join-form-area">
+                        <form id="" name="" method="" action="">
+                            <div class="join-form-box">
+                                <ul class="join-agreement-list">
+                                    <li>
+                                        <div class="join-agreement-top">
+                                            <div class="tit">회원가입 약관 <span>(필수)</span></div>
+                                            <div class="c-checkbox c-only-checkbox">
+                                                <input type="checkbox" id="agreement-join" name="">
+                                                <label for="agreement-join"></label>
+                                            </div>
+                                        </div>
+                                        <div class="join-agreement-con">
+                                            1. 개인정보 수집목적 및 이용목적<br>
+                                            가. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산<br>
+                                            콘텐츠 제공 , 구매 및 요금 결제 , 물품배송 또는 청구지 등 발송 , 금융거래 본인 인증 및 금융 서비스<br>
+                                            나. 회원 관리<br>
+                                            회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 가입 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인, 불만처리 등 민원처리 , 고지사항 전달 불가능합니다.<br>
+                                            3. 개인정보의 보유기간 및 이용기간<br>
+                                            원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.<br>
+                                            가. 회사 내부 방침에 의한 정보 보유 사유<br>
+                                            o 부정거래 방지 및 쇼핑몰 운영방침에 따른 보관 : OO년<br>
+                                            나. 관련 법령에 의한 정보보유 사유<br>
+                                            o 계약 또는 청약철회 등에 관한 기록<br>
+                                            -보존이유 : 전자상거래등에서의소비자보호에관한법률
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="join-agreement-top">
+                                            <div class="tit">QR코드 약관 <span>(필수)</span></div>
+                                            <div class="c-checkbox c-only-checkbox">
+                                                <input type="checkbox" id="agreement-qrcode" name="">
+                                                <label for="agreement-qrcode"></label>
+                                            </div>
+                                        </div>
+                                        <div class="join-agreement-con">
+                                            1. 개인정보 수집목적 및 이용목적<br>
+                                            가. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산<br>
+                                            콘텐츠 제공 , 구매 및 요금 결제 , 물품배송 또는 청구지 등 발송 , 금융거래 본인 인증 및 금융 서비스<br>
+                                            나. 회원 관리<br>
+                                            회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 가입 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인, 불만처리 등 민원처리 , 고지사항 전달 불가능합니다.<br>
+                                            3. 개인정보의 보유기간 및 이용기간<br>
+                                            원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.<br>
+                                            가. 회사 내부 방침에 의한 정보 보유 사유<br>
+                                            o 부정거래 방지 및 쇼핑몰 운영방침에 따른 보관 : OO년<br>
+                                            나. 관련 법령에 의한 정보보유 사유<br>
+                                            o 계약 또는 청약철회 등에 관한 기록<br>
+                                            -보존이유 : 전자상거래등에서의소비자보호에관한법률
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="join-form-btn-area">
+                                <button type="button" class="default-btn01 big-btn" onclick="location.href='rentcar-join-3.html';">
+                                    <span>다 음</span>
+                                </button>
+                            </div>
+                        </form>
                     </article>
                 </section>
             </div>
