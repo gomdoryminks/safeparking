@@ -18,9 +18,21 @@ const chkNumberExp = RegExp(/^[0-9-]*$/);
 $(function() {
     var userAgent = navigator.userAgent.toLowerCase();
     
-    //mobile일 경우
-    if ($(".wrap.mobileWrap").length > 0) {
-        //ios(아이폰, 아이패드, 아이팟) 전용 css 적용
+    //ios(아이폰, 아이패드, 아이팟) 전용 css 적용
+    if ($(".wrap.commonWrap").length > 0) {
+        //반응형일 경우
+        if (userAgent.indexOf("iphone") > -1 || userAgent.indexOf("ipad") > -1 || userAgent.indexOf("ipod") > -1) {
+            var cssIosLink = document.createElement("link");
+
+            cssIosLink.href = "../css/member-ios.css";
+            cssIosLink.async = false;
+            cssIosLink.rel = "stylesheet";
+            cssIosLink.type = "text/css";
+
+            document.head.appendChild(cssIosLink);
+        }
+    } else if ($(".wrap.mobileWrap").length > 0) {
+        //mobile일 경우
         if (userAgent.indexOf("iphone") > -1 || userAgent.indexOf("ipad") > -1 || userAgent.indexOf("ipod") > -1) {
             var cssIosLink = document.createElement("link");
 
@@ -40,6 +52,16 @@ $(function() {
         var vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
         //20230303 수정부분 end
+        
+        //게시판 목록 테이블 중 tr-empty 클래스를 가진 tr이 있을 경우 td에 colspan 설정
+        $(".wrap .list-table-area .list-table tr.tr-empty").each(function() {
+            //thead 안에 tr이 여러개일 경우도 있으므로 colgroup으로 값을 가져옴
+            var listColgroupObj = $(this).closest(".list-table").children("colgroup");
+
+            if ($(listColgroupObj).length > 0) {
+                $(this).children("td").attr("colspan", $(listColgroupObj).children("col:visible").length);
+            }
+        });
     });
     
     //스크롤시
@@ -184,6 +206,16 @@ $(function() {
             $(liObj).addClass("on");
             $(liObj).find(".list-faq-answer").stop(true,true).slideDown(200);
         }
+    });
+    
+    //게시판 목록 테이블 중 tr-empty 클래스를 가진 tr이 있을 경우 td에 colspan 설정
+    $(".wrap .list-table-area .list-table tr.tr-empty").each(function() {
+    	//thead 안에 tr이 여러개일 경우도 있으므로 colgroup으로 값을 가져옴
+    	var listColgroupObj = $(this).closest(".list-table").children("colgroup");
+    	
+    	if ($(listColgroupObj).length > 0) {
+    		$(this).children("td").attr("colspan", $(listColgroupObj).children("col:visible").length);
+    	}
     });
     
     //20230303 수정부분 start
@@ -1107,17 +1139,27 @@ function chkPhoneValid(obj) {
         formHtml += "    <input type='text' id='' name='' required placeholder='인증번호 입력' data-event-flag='Y'>";
         
         //20230223 수정부분 start
-        if ($(".wrap.mobileWrap").length > 0) {
+        if ($(".wrap.commonWrap").length > 0) {
+            //반응형일 경우
+            formHtml += "    <button type='button' class='default-btn07 round-btn only-pc' onclick='chkCertifyValid(this);'>";
+            formHtml += "        <span>인증완료</span>";
+            formHtml += "    </button>";
+            formHtml += "    <button type='button' class='default-btn01 only-mobile' onclick='chkCertifyValid(this);'>";
+            formHtml += "        <span>인증완료</span>";
+            formHtml += "    </button>";
+        } else if ($(".wrap.mobileWrap").length > 0) {
             //mobile일 경우
             formHtml += "    <button type='button' class='default-btn01' onclick='chkCertifyValid(this);'>";
+            formHtml += "        <span>인증완료</span>";
+            formHtml += "    </button>";
         } else {
             //pc일 경우
             formHtml += "    <button type='button' class='default-btn07 round-btn' onclick='chkCertifyValid(this);'>";
+            formHtml += "        <span>인증완료</span>";
+            formHtml += "    </button>";
         }
         //20230223 수정부분 end
         
-        formHtml += "        <span>인증완료</span>";
-        formHtml += "    </button>";
         formHtml += "</div>";
         
         $(formConObj).append(formHtml);
@@ -1197,19 +1239,10 @@ function setPasswordChange(obj) {
     var formObj = $(obj).closest(".valid-form-area");
     
     if ($(obj).is(":checked")) {
-        //20230223 수정부분 start
-        if ($(".wrap.mobileWrap").length > 0) {
-            //mobile일 경우
-            $(formObj).find(".password-change-area").css("display","block");
-        } else {
-            //pc일 경우
-            $(formObj).find(".password-change-area").css("display","table-row");
-        }
-        //20230223 수정부분 end
-        
+        $(formObj).find(".password-change-area").addClass("on");
         $(formObj).find(".password-change-area").find("input").prop("disabled",false);
     } else {
-        $(formObj).find(".password-change-area").css("display","none");
+        $(formObj).find(".password-change-area").removeClass("on");
         $(formObj).find(".password-change-area").find("input").prop("disabled",true);
         $(formObj).find(".password-change-area").find("input").val("");
     }
