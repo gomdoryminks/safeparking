@@ -1,4 +1,207 @@
 @charset "utf-8";
 
+/************************************************
 
+					setting
+
+*************************************************/
+body {
+    padding: calc(constant(safe-area-inset-top) + 0px) calc(constant(safe-area-inset-right) + 0px) calc(constant(safe-area-inset-bottom) + 0px) calc(constant(safe-area-inset-left) + 0px);
+    padding: calc(env(safe-area-inset-top) + 0px) calc(env(safe-area-inset-right) + 0px) calc(env(safe-area-inset-bottom) + 0px) calc(env(safe-area-inset-left) + 0px);
+}
+
+/************************************************
+
+					header
+
+*************************************************/
+header.header {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+header.m-header {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+
+/************************************************
+
+					mobile
+
+*************************************************/
+.m-wrap .m-box {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+.m-wrap .m-box .m-menu-list {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+}
+.m-wrap .m-mask {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+
+/************************************************
+
+					aside
+
+*************************************************/
+aside.aside {
+    top: calc(constant(safe-area-inset-top) + 80px);
+    top: calc(env(safe-area-inset-top) + 80px);
+}
+
+/************************************************
+
+					common
+
+*************************************************/
+.wrap .list-flex-area .list-flex-empty {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 604px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 604px);
+}
+
+@media screen and (max-width: 767px) {
+    .wrap .list-flex-area .list-flex-empty {
+        height: 100%;
+    }
+}
+
+/************************************************
+
+					login
+
+*************************************************/
+.c-login {
+    min-height: calc(constant(safe-area-inset-bottom) + 100vh);
+    min-height: calc(env(safe-area-inset-bottom) + 100vh);
+}
+
+/************************************************
+
+					error
+
+*************************************************/
+.c-error {
+    min-height: calc(constant(safe-area-inset-bottom) + 100vh);
+    min-height: calc(env(safe-area-inset-bottom) + 100vh);
+}
+
+/************************************************
+
+					join
+
+*************************************************/
+.c-join {
+    min-height: calc(constant(safe-area-inset-bottom) + 100vh);
+    min-height: calc(env(safe-area-inset-bottom) + 100vh);
+}
+
+@media screen and (max-width: 767px) {
+    .c-join {
+        min-height: auto;
+    }
+    .c-join .join-form-area {
+        height: calc(constant(safe-area-inset-bottom) + 100vh - 167px);
+		height: calc(env(safe-area-inset-bottom) + 100vh - 167px);
+    }
+}
+
+/************************************************
+
+					page
+
+*************************************************/
+.c-page {
+    min-height: calc(constant(safe-area-inset-bottom) + 100vh - 146px);
+    min-height: calc(env(safe-area-inset-bottom) + 100vh - 146px);
+}
+.c-page .page-area .list-faq-empty {
+    height: calc(constant(safe-area-inset-bottom) + 100vh - 565px);
+    height: calc(env(safe-area-inset-bottom) + 100vh - 565px);
+}
+
+@media screen and (max-width: 767px) {
+    .c-page {
+        min-height: auto;
+    }
+    .c-page .page-area .page-list-area {
+        height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+		height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+    }
+    .c-page .page-area .board-list-area {
+        height: auto;
+    }
+    .c-page .page-area .page-detail-area {
+        height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+		height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+    }
+    .c-page .page-area .main-introduce-list {
+        height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+		height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+    }
+    .c-page .page-area .list-faq-empty {
+        height: calc(constant(safe-area-inset-bottom) + 100vh - 222px);
+		height: calc(env(safe-area-inset-bottom) + 100vh - 222px);
+    }
+}
+
+/************************************************
+
+					layer
+
+*************************************************/
+.l-area {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+.l-area + .l-mask {
+    top: calc(constant(safe-area-inset-top) + 0px);
+    top: calc(env(safe-area-inset-top) + 0px);
+}
+.l-area .l-box .l-con-area {
+    max-height: calc(constant(safe-area-inset-bottom) + 100vh - 124px);
+	max-height: calc(env(safe-area-inset-bottom) + 100vh - 124px);
+}
+.l-area .l-box .l-tit-area + .l-con-area {
+    max-height: calc(constant(safe-area-inset-bottom) + 100vh - 194px);
+	max-height: calc(env(safe-area-inset-bottom) + 100vh - 194px);
+}
+.l-area#alarm-layer .l-box .l-con-area {
+    max-height: calc(constant(safe-area-inset-bottom) + 100vh - 40px);
+	max-height: calc(env(safe-area-inset-bottom) + 100vh - 40px);
+}
+.l-area .l-box .l-con-area .l-con-tit-area + .l-con {
+    max-height: calc(constant(safe-area-inset-bottom) + 100vh - 110px);
+	max-height: calc(env(safe-area-inset-bottom) + 100vh - 110px);
+}
+
+@media screen and (max-width: 767px) {
+    .l-area .l-box {
+        height: calc(constant(safe-area-inset-bottom) + 100vh);
+		height: calc(env(safe-area-inset-bottom) + 100vh);
+    }
+    .l-area#alert-layer .l-box,
+    .l-area#confirm-layer .l-box,
+    .l-area#alarm-layer .l-box {
+        height: auto;
+    }
+    .l-area .l-box .l-con-area {
+        max-height: none;
+    }
+    .l-area .l-box .l-tit-area + .l-con-area {
+        max-height: calc(constant(safe-area-inset-bottom) + 100vh - 70px);
+		max-height: calc(env(safe-area-inset-bottom) + 100vh - 70px);
+    }
+    .l-area#alert-layer .l-box .l-con-area,
+    .l-area#confirm-layer .l-box .l-con-area {
+        max-height: calc(constant(safe-area-inset-bottom) + 100vh - 124px);
+		max-height: calc(env(safe-area-inset-bottom) + 100vh - 124px);
+    }
+    .l-area#alarm-layer .l-box .l-con-area {
+        max-height: calc(constant(safe-area-inset-bottom) + 100vh - 40px);
+		max-height: calc(env(safe-area-inset-bottom) + 100vh - 40px);
+    }
+}
 
