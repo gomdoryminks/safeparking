@@ -1406,7 +1406,7 @@ function printQrcodeTemplate(obj) {
 
                     var qtDataURL = qtCanvas.toDataURL("image/png");
                     var dataPositionArr = dataPosition.split(',');
-                    alert(qtQrcode._oDrawing._elImage.currentSrc);
+                    
                     if (dataPositionArr.length > 1) {
                         setTimeout(() => {
                             //console.log(qtQrcode);
